@@ -48,56 +48,57 @@ public class LongestWordsParserTest {
 
 	@DataProvider(name = "longestWordsDataProvider")
 	public Object[] longestWordsDataProvider() {
-		// Usually these data come from excel or text file
-		// For simplicity, hard coded string used here.
-		return new Object[] { new LongestWordTestModel() {
+		// Usually these data come from external source (excel or text file).
+		// For simplicity, hard coded values used here.
+		return new Object[] { 
+		   new LongestWordTestModel() {
 			{
 				givenText = "";
 				expectedLongestLength = 0;
 				expectedLongestWords = new String[0];
-				assertionErrorMessage = "Check with empty string";
+				assertionErrorMessage = "Case-1: Check with empty string";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = " ";
 				expectedLongestLength = 0;
 				expectedLongestWords = new String[0];
-				assertionErrorMessage = "Check with single white space";
+				assertionErrorMessage = "Case-2: Check with single white space";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = "The cow jumped over the moon";
 				expectedLongestLength = 6;
 				expectedLongestWords = new String[] { "jumped" };
-				assertionErrorMessage = "Check with only one longest word";
+				assertionErrorMessage = "Case-3: Check with only one longest word";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = "A";
 				expectedLongestLength = 1;
 				expectedLongestWords = new String[] { "A"};
-				assertionErrorMessage = "Check with only one length one longest word";
+				assertionErrorMessage = "Case-4: Check with only one length one longest word";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = "C k m";
 				expectedLongestLength = 1;
 				expectedLongestWords = new String[] { "C", "k", "m" };
-				assertionErrorMessage = "Check with only one length multiple longest word";
+				assertionErrorMessage = "Case-5: Check with only one length multiple longest word";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = "Mohona is the best person";
 				expectedLongestLength = 6;
 				expectedLongestWords = new String[] { "Mohona", "person" };
-				assertionErrorMessage = "Check with two longest words";
+				assertionErrorMessage = "Case-6: Check with two longest words";
 			}
 		}, new LongestWordTestModel() {
 			{
 				givenText = "Mohona is Mohona";
 				expectedLongestLength = 6;
 				expectedLongestWords = new String[] { "Mohona" };
-				assertionErrorMessage = "Check with two longest same word";
+				assertionErrorMessage = "Case-7: Check with two longest same word";
 			}
 		} };
 	}
